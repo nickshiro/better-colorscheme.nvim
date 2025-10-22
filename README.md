@@ -15,7 +15,7 @@ return {
 
 ### Vim pack
 ```lua
-vim.pack.add({ "https://github.com/nickshiro/better-colorscheme.nvim" }, { load = true })
+vim.pack.add({ "https://github.com/nickshiro/better-colorscheme.nvim" }, { confirm = true })
 ```
 
 ## Contributing
