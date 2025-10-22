@@ -1,5 +1,3 @@
-local M = {}
-
 local config_path = vim.fn.stdpath("data") .. "/better-colorscheme.txt"
 
 local function set_theme(theme)
@@ -62,14 +60,9 @@ local function command_handler(opts)
 	end
 end
 
-function M.setup()
-	load_theme()
-
-	vim.api.nvim_create_user_command("Colorscheme", command_handler, {
-		complete = preview_theme,
-		nargs = 1,
-		desc = "Set and persist Neovim colorscheme with live preview",
-	})
-end
-
-return M
+load_theme()
+vim.api.nvim_create_user_command("Colorscheme", command_handler, {
+	complete = preview_theme,
+	nargs = 1,
+	desc = "Set and persist Neovim colorscheme with live preview",
+})
