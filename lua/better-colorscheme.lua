@@ -1,6 +1,6 @@
 local M = {}
 
-local config_path = vim.fn.stdpath("data") .. "/theme.txt"
+local config_path = vim.fn.stdpath("data") .. "/better-colorscheme.txt"
 
 local function set_theme(theme)
 	local ok, err = pcall(vim.cmd.colorscheme, theme)
