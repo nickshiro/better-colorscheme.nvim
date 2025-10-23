@@ -1,4 +1,4 @@
-local config_path = vim.fn.stdpath("data") .. "/better-colorscheme.txt"
+local state_path = vim.fs.joinpath(vim.fn.stdpath("data"), "better-colorscheme.txt")
 
 local function set_theme(theme)
 	local ok, err = pcall(vim.cmd.colorscheme, theme)
@@ -6,11 +6,11 @@ local function set_theme(theme)
 		vim.notify("Failed to set colorscheme: " .. err, vim.log.levels.ERROR)
 		return
 	end
-	vim.fn.writefile({ theme }, config_path)
+	vim.fn.writefile({ theme }, state_path)
 end
 
 local function load_theme()
-	local ok, theme = pcall(vim.fn.readfile, config_path)
+	local ok, theme = pcall(vim.fn.readfile, state_path)
 	if ok and theme[1] then
 		local ok_load = pcall(vim.cmd.colorscheme, theme[1])
 		if not ok_load then
