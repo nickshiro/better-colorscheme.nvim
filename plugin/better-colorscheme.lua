@@ -1,4 +1,4 @@
-local state_path = vim.fs.joinpath(vim.fn.stdpath("data"), "better-colorscheme.txt")
+local state_path = vim.fs.joinpath(vim.fn.stdpath("state"), "better-colorscheme.txt")
 
 local function set_theme(theme)
 	local ok, err = pcall(vim.cmd.colorscheme, theme)
